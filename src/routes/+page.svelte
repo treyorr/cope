@@ -214,14 +214,17 @@
     </main>
 
     <footer
-        class="border-t border-base-content/5 py-2 text-center text-[10px] text-base-content/20"
+        class="border-t border-base-content/5 py-6 text-center text-[10px] text-base-content/25 flex flex-col gap-1"
     >
-        made by <a
-            href="https://www.tlo3.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="underline hover:text-base-content/50 transition-colors"
-            >Thomas "Trey" Lanier Orr III</a
-        >
+        <span>
+            made by <a
+                href="https://www.tlo3.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline hover:text-base-content/50 transition-colors"
+                >Thomas "Trey" Lanier Orr III</a
+            >
+        </span>
+        <span class="opacity-60">no data is stored outside of your own browser</span>
     </footer>
 </div>
