@@ -9,6 +9,10 @@
         createSnippet,
         formatPhone,
         formatAddress,
+        loadPhone,
+        savePhone,
+        loadAddress,
+        saveAddress,
     } from "$lib/store";
 
     // --- Snippets ---
@@ -31,6 +35,16 @@
 
     onMount(() => {
         snippets = loadSnippets();
+        phoneInput = loadPhone();
+        address = loadAddress();
+    });
+
+    $effect(() => {
+        savePhone(phoneInput);
+    });
+
+    $effect(() => {
+        saveAddress(address);
     });
 
     function addSnippet() {

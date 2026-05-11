@@ -15,6 +15,8 @@ export interface AddressData {
 }
 
 const STORAGE_KEY = 'cope-snippets';
+const PHONE_KEY = 'cope-phone';
+const ADDRESS_KEY = 'cope-address';
 
 function generateId(): string {
 	return crypto.randomUUID();
@@ -33,6 +35,31 @@ export function loadSnippets(): Snippet[] {
 export function saveSnippets(snippets: Snippet[]): void {
 	if (!browser) return;
 	localStorage.setItem(STORAGE_KEY, JSON.stringify(snippets));
+}
+
+export function loadPhone(): string {
+	if (!browser) return '';
+	return localStorage.getItem(PHONE_KEY) ?? '';
+}
+
+export function savePhone(value: string): void {
+	if (!browser) return;
+	localStorage.setItem(PHONE_KEY, value);
+}
+
+export function loadAddress(): AddressData {
+	if (!browser) return { street: '', city: '', state: '', zip: '' };
+	try {
+		const raw = localStorage.getItem(ADDRESS_KEY);
+		return raw ? JSON.parse(raw) : { street: '', city: '', state: '', zip: '' };
+	} catch {
+		return { street: '', city: '', state: '', zip: '' };
+	}
+}
+
+export function saveAddress(addr: AddressData): void {
+	if (!browser) return;
+	localStorage.setItem(ADDRESS_KEY, JSON.stringify(addr));
 }
 
 export function createSnippet(label: string, value: string, category: Snippet['category'] = 'general'): Snippet {
