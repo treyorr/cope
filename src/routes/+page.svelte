@@ -56,11 +56,8 @@
 </script>
 
 <svelte:head>
-    <title>Cope — Job App Clipboard</title>
-    <meta
-        name="description"
-        content="Quick-copy snippets for job applications"
-    />
+    <title>Cope — Copy Things</title>
+    <meta name="description" content="Copy things" />
 </svelte:head>
 
 <div class="min-h-screen bg-base-100">
