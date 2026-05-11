@@ -113,7 +113,6 @@ export function formatAddress(addr: AddressData): { label: string; value: string
 	// Combined formats
 	if (street && city && stateUpper && zip) {
 		results.push({ label: 'Standard', value: `${street}, ${city}, ${stateUpper} ${zip}` });
-		results.push({ label: 'Two-line', value: `${street}\n${city}, ${stateUpper} ${zip}` });
 	}
 
 	// Individual parts

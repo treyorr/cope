@@ -80,7 +80,7 @@
         class="border-b border-base-content/5 bg-base-100/80 backdrop-blur-lg sticky top-0 z-50"
     >
         <div
-            class="max-w-xl mx-auto px-4 py-3 flex items-center justify-between"
+            class="max-w-xl mx-auto px-4 py-0.5 flex items-center justify-between"
         >
             <h1 class="text-lg font-bold tracking-tight text-base-content">
                 cope
@@ -91,17 +91,17 @@
         </div>
     </header>
 
-    <main class="max-w-xl mx-auto px-4 py-5 flex flex-col gap-6">
+    <main class="max-w-xl mx-auto px-4 py-3 flex flex-col gap-3">
         <!-- ═══ SNIPPETS ═══ -->
         <section>
             <h2
-                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-2"
+                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-1"
             >
                 Snippets
             </h2>
 
             <!-- Add form -->
-            <div class="flex gap-2 mb-3">
+            <div class="flex gap-2 mb-1.5">
                 <input
                     type="text"
                     class="input input-bordered input-sm flex-[2] bg-base-200 min-w-0"
@@ -124,11 +124,11 @@
             </div>
 
             {#if snippets.length === 0}
-                <p class="text-xs text-base-content/20 text-center py-4">
+                <p class="text-xs text-base-content/20 text-center py-2">
                     No snippets yet — add your name, email, LinkedIn, etc.
                 </p>
             {:else}
-                <div class="flex flex-col gap-1.5">
+                <div class="flex flex-col gap-1">
                     {#each snippets as snippet (snippet.id)}
                         <CopyCard
                             label={snippet.label}
@@ -146,18 +146,18 @@
         <!-- ═══ PHONE ═══ -->
         <section>
             <h2
-                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-2"
+                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-1"
             >
                 Phone Formats
             </h2>
             <input
                 type="tel"
-                class="input input-bordered input-sm w-full bg-base-200 mb-3"
+                class="input input-bordered input-sm w-full bg-base-200 mb-1.5"
                 placeholder="Enter 10-digit number"
                 bind:value={phoneInput}
             />
             {#if phoneFormats.length > 0}
-                <div class="flex flex-col gap-1.5">
+                <div class="flex flex-col gap-1">
                     {#each phoneFormats as fmt}
                         <CopyCard label={fmt.label} value={fmt.value} compact />
                     {/each}
@@ -170,11 +170,11 @@
         <!-- ═══ ADDRESS ═══ -->
         <section>
             <h2
-                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-2"
+                class="text-[11px] font-semibold uppercase tracking-widest text-base-content/30 mb-1"
             >
                 Address Formats
             </h2>
-            <div class="flex flex-col gap-2 mb-3">
+            <div class="flex flex-col gap-1.5 mb-1.5">
                 <input
                     type="text"
                     class="input input-bordered input-sm w-full bg-base-200"
@@ -204,7 +204,7 @@
                 </div>
             </div>
             {#if addressFormats.length > 0}
-                <div class="flex flex-col gap-1.5">
+                <div class="flex flex-col gap-1">
                     {#each addressFormats as fmt}
                         <CopyCard label={fmt.label} value={fmt.value} compact />
                     {/each}
@@ -214,7 +214,7 @@
     </main>
 
     <footer
-        class="border-t border-base-content/5 py-3 text-center text-[10px] text-base-content/20"
+        class="border-t border-base-content/5 py-2 text-center text-[10px] text-base-content/20"
     >
         made by <a
             href="https://www.tlo3.com/"

@@ -22,14 +22,14 @@
 </script>
 
 <button
-	class="card bg-base-200 hover:bg-base-300 border border-base-content/5 transition-all duration-200 cursor-pointer group text-left w-full active:scale-[0.98] {compact ? 'p-3' : 'p-4'}"
+	class="card bg-base-200 hover:bg-base-300 border border-base-content/5 transition-all duration-200 cursor-pointer group text-left w-full active:scale-[0.98] {compact ? 'py-1.5 px-2.5' : 'p-4'}"
 	onclick={handleCopy}
 	title="Click to copy"
 >
-	<div class="flex items-start justify-between gap-3">
-		<div class="min-w-0 flex-1">
-			<p class="text-xs font-medium uppercase tracking-wider text-base-content/40 mb-1">{label}</p>
-			<p class="text-sm text-base-content font-medium whitespace-pre-wrap break-all">{value}</p>
+	<div class="flex items-center justify-between gap-2">
+		<div class="min-w-0 flex-1 {compact ? 'flex items-baseline gap-2' : ''}">
+			<p class="text-[10px] font-medium uppercase tracking-wider text-base-content/40 {compact ? 'w-[6.5rem] shrink-0 text-right' : 'mb-1'}">{label}</p>
+			<p class="text-sm text-base-content font-medium whitespace-pre-wrap break-all {compact ? 'truncate' : ''}">{value}</p>
 		</div>
 		<div class="flex items-center gap-1 shrink-0 pt-0.5">
 			{#if copied}
